@@ -1,4 +1,4 @@
-package com.example.lista_de_tarefas
+package com.emersonjahn.lista_de_tarefas
 
 import io.flutter.embedding.android.FlutterActivity
 
