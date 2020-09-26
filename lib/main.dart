@@ -33,8 +33,8 @@ class _HomeState extends State<Home> {
             padding: EdgeInsets.fromLTRB(17.0, 1.0, 7.0, 1.0),
             child: Row(
               children: <Widget>[
-                Expanded(child: 
-                  TextField(
+                Expanded(
+                  child: TextField(
                     decoration: InputDecoration(
                       labelText: "Nova Tarefa",
                       labelStyle: TextStyle(
@@ -50,6 +50,23 @@ class _HomeState extends State<Home> {
                   onPressed: (){},
                 )
               ],
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.only(top:10.0),
+              itemCount: _toDoList.length,
+              itemBuilder: (context, index) {
+                return CheckboxListTile(
+                  title: Text(_toDoList[index]["title"]),
+                  value: _toDoList[index]["ok"],
+                  secondary: CircleAvatar(
+                    child: Icon(
+                      _toDoList[index]["ok"] ? Icons.check : Icons.error
+                    )
+                  ),
+                );   
+              }
             ),
           )
         ],
